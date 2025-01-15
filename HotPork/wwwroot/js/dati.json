@@ -1,0 +1,79 @@
+﻿[
+  {
+    "Nome": "Al Capone",
+    "Carne": "Spalla di maiale",
+    "Verdura": "Cavolo viola",
+    "Salsa": "Salsa BBQ",
+    "Extra": "Bacon",
+    "Formaggio": "Crema di cheddar",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "Un panino ricco e saporito, il \"Al Capone\" combina la succulenta spalla di maiale con il croccante cavolo viola, il tutto esaltato da una deliziosa salsa BBQ. Il bacon aggiunge una nota affumicata, mentre la crema di cheddar dona una cremosità irresistibile. Perfetto per chi cerca un'esperienza gustativa intensa e appagante."
+  },
+  {
+    "Nome": "Bacon Lover",
+    "Carne": "Pancetta",
+    "Verdura": "Lattuga",
+    "Salsa": "Maionese",
+    "Extra": "Pomodoro",
+    "Formaggio": "Formaggio fuso",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "Il \"Bacon Lover\" è il panino ideale per gli amanti del bacon. La pancetta croccante è accompagnata da fresca lattuga e succulento pomodoro, il tutto avvolto da una generosa dose di maionese. Il formaggio fuso completa il tutto, aggiungendo una nota cremosa e avvolgente. Un panino che soddisferà ogni desiderio di sapore e golosità."
+  },
+  {
+    "Nome": "Chicken Delight",
+    "Carne": "Pollo",
+    "Verdura": "Insalata",
+    "Salsa": "Salsa rosa",
+    "Extra": "Mais",
+    "Formaggio": "Formaggio",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "Il \"Chicken Delight\" è un panino leggero e gustoso, perfetto per chi ama i sapori delicati. Il pollo, cotto alla perfezione, si unisce alla freschezza dell'insalata e alla dolcezza del mais, il tutto arricchito dalla cremosità della salsa rosa. Il formaggio aggiunge una nota avvolgente e saporita, completando così un panino equilibrato e appagante."
+  },
+  {
+    "Nome": "Porcino",
+    "Carne": "Burger di Angus",
+    "Verdura": "Porcini trifolati",
+    "Salsa": "Salsa Alioli",
+    "Extra": "Bacon",
+    "Formaggio": "Burratina",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "Il \"Porcino\" è un panino gourmet che saprà conquistare anche i palati più esigenti. Il burger di Angus, succulento e saporito, si unisce alla delicatezza dei porcini trifolati e alla cremosità della salsa alioli. Il bacon aggiunge una nota croccante e affumicata, mentre la burratina dona una cremosità irresistibile. Un panino raffinato e ricco di gusto, perfetto per chi cerca un'esperienza culinaria unica."
+  },
+  {
+    "Nome": "Giorgione",
+    "Carne": "Burger di manzo",
+    "Verdura": "Insalata",
+    "Salsa": "Maionese",
+    "Extra": "Omelette",
+    "Formaggio": "Fontina",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "Il \"Giorgione\" è un panino che unisce sapori classici e ingredienti di qualità. Il burger di manzo, succulento e saporito, si unisce alla freschezza dell'insalata e alla cremosità della maionese, il tutto arricchito dal croccante bacon. L'omelette aggiunge una nota avvolgente e saporita, completando così un panino ricco e appagante. Perfetto per chi ama i sapori tradizionali e genuini."
+  },
+  {
+    "Nome": "Americano",
+    "Carne": "Gamberoni argentini",
+    "Verdura": "Insalata",
+    "Salsa": "Guacamole",
+    "Extra": "Melanzana fritta",
+    "Formaggio": "Stracciatella",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "L'\"Americano\" è un panino che unisce sapori decisi e ingredienti di qualità. I gamberi argentini, succulenti e saporiti, si uniscono alla freschezza dell'insalata e alla cremosità del guacamole, il tutto arricchito dalla croccante melanzana fritta. La stracciatella aggiunge una nota avvolgente e saporita, completando così un panino ricco e appagante. Perfetto per chi cerca un'esperienza culinaria unica e appagante."
+  },
+  {
+    "Nome": "Hot Pork",
+    "Carne": "Spalla di maiale",
+    "Verdura": "Cavolo cappuccio",
+    "Salsa": "Salsa BBQ",
+    "Extra": "Patatine fritte",
+    "Formaggio": "Formaggio fuso",
+    "Prezzo": 5,
+    "Immagine": "https://placehold.co/250x250",
+    "Descrizione": "L'\"Hot Pork\" è un panino ricco e saporito, perfetto per chi ama i sapori intensi. La succulenta spalla di maiale si unisce al croccante cavolo cappuccio e alla deliziosa salsa BBQ, il tutto arricchito dalle croccanti patatine fritte. Il formaggio fuso completa il tutto, aggiungendo una nota cremosa e avvolgente. Un panino che soddisferà ogni desiderio di sapore e golosità."
+  }
+]
