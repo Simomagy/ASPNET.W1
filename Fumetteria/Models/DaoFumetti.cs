@@ -7,18 +7,18 @@ public class DaoFumetti : IDAO
     public List<Entity> GetRecords()
     {
         const string query = "SELECT * FROM Fumetti";
-        List<Entity> athletesRecords = [];
+        List<Entity> records = [];
         var fullResponse = _db.ReadDb(query);
         if (fullResponse == null)
-            return athletesRecords;
+            return records;
         foreach (var singleResponse in fullResponse)
         {
             Entity entity = new Fumetto();
             entity.TypeSort(singleResponse);
-            athletesRecords.Add(entity);
+            records.Add(entity);
         }
 
-        return athletesRecords;
+        return records;
     }
 
     public bool CreateRecord(Entity entity)
