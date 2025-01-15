@@ -3505,6 +3505,7 @@ input[type='number'] {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+    margin-bottom: 1rem;
 }
 
 .disabled {

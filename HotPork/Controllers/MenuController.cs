@@ -58,6 +58,8 @@ public class MenuController : Controller
     public IActionResult FormModifica(int id)
     {
         var panino = DAOPanini.GetInstance().FindRecord(id);
-        return View("FormModifica", panino);
+        if (panino == null)
+            return Content($"Errore nel reperimento del panino con id {id}");
+        return View((Panino)panino);
     }
 }

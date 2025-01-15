@@ -2,18 +2,131 @@
 @model HotPork.Views.Menu.FormInserisci
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title></title>
+    <meta charset="utf-8" />
+    <title>Crea Burger</title>
+    <script src="~/js/site.js"></script>
 </head>
 <body>
-<div>
-    
-</div>
+<h1>Crea un nuovo burger</h1>
+<form action="/Menu/Inserisci" onsubmit="return valida()" method="post">
+
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="nome">Nome</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="nome" name="nome" placeholder="BeppeBurger">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Nome del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="carne">Carne</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="carne" name="carne" placeholder="Pesce">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Carne del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="verdura">Verdura</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="verdura" name="verdura" placeholder="Pomodoro">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Verdura del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="salsa">Salsa</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="salsa" name="salsa" placeholder="BBQ">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Salsa del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="formaggio">Formaggio</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="formaggio" name="formaggio" placeholder="Cheddar">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Formaggio del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="extra">Extra</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="extra" name="extra" placeholder="Cheddar">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Extra del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="prezzo">Prezzo</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="number" class="hover" id="prezzo" name="prezzo" placeholder="5">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Prezzo del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="immagine">Immagine</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="immagine" name="immagine" placeholder="https://placehold.co/250x250">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Immagine del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="descrizione">Descrizione</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="descrizione" name="descrizione" placeholder="Descrizione">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Descrizione del panino</p>
+            </div>
+        </div>
+    </div>
+    <div class="divider my-3"></div>
+    <input class="btn btn-success" type="submit" value="Salva" />
+</form>
 </body>
 </html>

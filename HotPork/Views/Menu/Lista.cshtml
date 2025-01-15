@@ -29,10 +29,10 @@
         var panino = (Panino)entity;
         <div class="card d-flex w-fit justify-center flex-col align-center gap-3">
             <div class="card-header text-body-subtle w-100">
-                <i class="ti ti-book-2"></i>
+                <i class="ti ti-burger"></i>
                 @(panino.Nome)
             </div>
-            <div class="card-img">
+            <div class="d-flex w-100 h-100 justify-center align-center">
                 <img class="rounded" src="@(panino.Immagine)" alt="@(panino.Nome)" />
             </div>
             <div class="card-body text-center">
@@ -49,14 +49,9 @@
                     <div class="tag-text">@(panino.Salsa)</div>
                 </div>
                 <div class="tag-group">
-                    <div class="tag">Extra: </div>
-                    <div class="tag-text">@(panino.Extra)</div>
-                </div>
-                <div class="tag-group">
                     <div class="tag">Formaggio: </div>
                     <div class="tag-text">@(panino.Formaggio)</div>
                 </div>
-                <p class="text-body-subtle">@(panino.Descrizione)</p>
                 <div class="tag-group">
                     <div class="tag">Prezzo: </div>
                     <div class="tag-text">@(panino.Prezzo)</div>
