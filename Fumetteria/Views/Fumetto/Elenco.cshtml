@@ -1,0 +1,60 @@
+﻿@using Fumetteria.Models
+@model List<MSSTU.DB.Utility.Entity>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Elenco Fumetti</title>
+</head>
+<body>
+<div class="bg-dark-subtle shadow p-3 mb-2 rounded b1 border-subtle">
+    <h1 class="text-primary bold">Elenco Fumetti</h1>
+    <a class="btn btn-success w-25 d-flex align-center justify-center"
+       href="/Fumetto/FormInserisci">
+        <i class="ti ti-plus me-2"></i>
+        Crea
+    </a>
+</div>
+
+<div class="divider my-3"></div>
+
+<div class="features-grid scroll-y">
+    @foreach (var f in @Model)
+    {
+        <div class="card d-flex w-fit justify-center flex-col align-center gap-3">
+            <div class="card-header text-body-subtle w-100">
+                <i class="ti ti-book-2"></i>
+                @(((Fumetto)f).Testata)
+            </div>
+            <div class="card-body text-center">
+                <h3 class="text-primary">@(((Fumetto)f).Titolo)</h3>
+                <p class="text-body-subtle">Numero: @(((Fumetto)f).Numero)</p>
+                <p class="text-body-subtle">Casa Editrice: @(((Fumetto)f).CasaEditrice)</p>
+            </div>
+            <div class="d-flex gap-3 b1-top border-subtle w-100 p-2">
+                <a class="btn btn-info w-100 d-flex align-center justify-center"
+                   href="/Fumetto/Dettagli/@f.Id">
+                    <i class="ti ti-brand-github me-2"></i>
+                    Dettagli
+                </a>
+                <a class="btn btn-danger w-100 d-flex align-center justify-center"
+                   href="/Fumetto/Elimina/@f.Id">
+                    <i class="ti ti-trash me-2"></i>
+                    Elimina
+                </a>
+                <a class="btn btn-warning w-100 d-flex align-center justify-center"
+                   href="/Fumetto/FormModifica/@f.Id">
+                    <i class="ti ti-pencil me-2"></i>
+                    Modifica
+                </a>
+            </div>
+        </div>
+    }
+</div>
+</body>
+</html>

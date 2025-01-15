@@ -1,0 +1,35 @@
+﻿@using Fumetteria.Models
+@model MSSTU.DB.Utility.Entity
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dettagli @((Fumetto)Model).Titolo</title>
+</head>
+<body>
+<div class="d-flex w-100 h-100 justify-center align-center">
+    <div class="card d-flex w-100 justify-center flex-col align-center gap-3">
+        <div class="card-header text-body-subtle w-100">
+            <i class="ti ti-book-2"></i>
+            @(((Fumetto)Model).Testata)
+        </div>
+        <div class="card-body text-center">
+            <h3 class="text-primary">@(((Fumetto)Model).Titolo)</h3>
+            <p class="text-body-subtle">Numero: @(((Fumetto)Model).Numero)</p>
+            <p class="text-body-subtle">Casa Editrice: @(((Fumetto)Model).CasaEditrice)</p>
+        </div>
+        <a class="card-footer w-100 hover-secondary d-flex align-center justify-center"
+           href="https://github.com/orgs/Nebula-Studios-Software/projects/1/views/2"
+           target="_blank">
+            <i class="ti ti-chevrons-left me-2"></i>
+            Indietro
+        </a>
+    </div>
+</div>
+</body>
+</html>

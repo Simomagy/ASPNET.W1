@@ -1,0 +1,72 @@
+﻿@using Fumetteria.Models
+@model Fumetteria.Models.Fumetto
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modifica un fumetto</title>
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+<h1>Modifica un fumetto!</h1>
+<form action="/Fumetto/Modifica" onsubmit="return valida()" method="post">
+
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="tit">Title</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="tit" name="titolo" placeholder="Io sono Dio" value="@Model.Titolo">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Titolo del libro</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="num">Numero</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="number" class="hover" id="num" name="numero" placeholder="420" value="@Model.Numero">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Numero del libro</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="tes">Testata</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="tes" name="testata" placeholder="Dylan Dog" value="@Model.Testata">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Testata del libro</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="casaed">Casa Editrice</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="casaed" name="casaeditrice" placeholder="Bonelli" value="@Model.CasaEditrice">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Casa editrice del libro</p>
+            </div>
+        </div>
+    </div>
+    <input type="number" value="@Model.Id" name="id" hidden readonly/>
+    <div class="divider my-3"></div>
+    <input class="btn btn-success" type="submit" value="Salva" />
+</form>
+</body>
+</html>

@@ -55,7 +55,8 @@ public class DaoFumetti : IDAO
     public bool DeleteRecord(int recordId)
     {
         const string query = "DELETE FROM Fumetti WHERE Id = @Id";
-        return _db.UpdateDb(query);
+        var parameters = new Dictionary<string, object> { { "@Id", recordId } };
+        return _db.UpdateDb(query, parameters);
     }
 
     public Entity? FindRecord(int recordId)
