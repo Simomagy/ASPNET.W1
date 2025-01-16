@@ -1,0 +1,7 @@
+﻿nome; cognome; dob; residenza; reparto; primario; pazientiGuariti; totaleDecessi; ospedale
+Mario; Rossi; 1981-02-02; Roma; Neurologia; 1; 10; 2; 2
+Luca; Bianchi; 1982-03-03; Milano; Oncologia; 0; 10; 2; 3
+Giuseppe; Verdi; 1983-04-04; Napoli; Pediatria; 1; 10; 2; 1
+Giacomo; Gialli; 1984-05-05; Torino; Ortopedia; 0; 10; 2; 2
+Paolo; Neri; 1985-06-06; Palermo; Dermatologia; 1; 10; 2; 3
+Antonio; Marroni; 1986-07-07; Bari; Ginecologia; 0; 10; 2; 1

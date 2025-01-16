@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fumetteria", "Fumetteria\Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPork", "HotPork\HotPork.csproj", "{32B866D3-E1B6-4347-A56E-715842792347}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ospedale", "Ospedale\Ospedale.csproj", "{A299DA3E-E0A2-4899-86BF-CD83EE047D8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{32B866D3-E1B6-4347-A56E-715842792347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B866D3-E1B6-4347-A56E-715842792347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32B866D3-E1B6-4347-A56E-715842792347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A299DA3E-E0A2-4899-86BF-CD83EE047D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A299DA3E-E0A2-4899-86BF-CD83EE047D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A299DA3E-E0A2-4899-86BF-CD83EE047D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A299DA3E-E0A2-4899-86BF-CD83EE047D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
