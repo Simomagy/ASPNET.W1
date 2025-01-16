@@ -5,7 +5,8 @@ go
 
 create table dbo.Ospedali
 (
-    id       int identity,
+    id       int identity constraint Ospedali_pk PRIMARY KEY ,
+
     sede     varchar(255),
     nome     varchar(255),
     pubblico bit
