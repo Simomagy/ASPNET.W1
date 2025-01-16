@@ -1,0 +1,70 @@
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HotPork</title>
+    <link rel="stylesheet" href="~/lib/ns-v2.css" asp-append-version="true"/>
+    <link href="~/assets/base-light.ico" rel="icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/@@tabler/icons-webfont@3.27.0/dist/tabler-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-darker scroll-y">
+<header class="my-3">
+    <nav
+            class="float-navbar sticky bg-dark-subtle d-flex gap-5 blur-10 p-3 w-fit h-auto b1 border-subtle justify-between align-center rounded">
+        <a class="d-flex align-center" asp-area="" asp-page="/Index">
+				<span class="b1 border-primary shadow rounded ns-icon ns-icon-md p-1 me-3">
+					<img alt="NS Core" class="img-fluid shadow-primary" src="~/assets/base-light.ico"/>
+				</span>
+            <h5 class="text-primary shadow-primary pointer bold">Nebula Studios</h5>
+        </a>
+        <div class="d-flex w-auto gap-3 align-center">
+            <a class="btn @(currentController == "Home" && currentAction == "Index" ? "btn-primary shadow-primary" : "") bold" asp-controller="Home" asp-action="Index">
+                <i class="ti ti-home p-1"></i>
+                Home
+            </a>
+
+            <a class="btn @(currentController == "Menu" && currentAction == "Lista" ? "btn-primary shadow-primary" : "")" asp-controller="Menu" asp-action="Lista">
+                <i class="ti ti-burger p-1"></i>
+                Menu Panini
+            </a>
+        </div>
+        <div class="divider-vert"></div>
+        <div class="d-flex gap-3 align-center">
+            <a href="https://github.com/Nebula-Studios-Software" target="_blank">
+                <i class="ti ti-brand-github hover-body"></i>
+            </a>
+            <a id="themeMenu">
+                <i class="ti ti-brush hover-body"></i>
+            </a>
+            <div class="hidden" id="themeContainer">
+                <div class="d-flex gap-3">
+                    <div class="theme" id="violet"></div>
+                    <div class="theme" id="red"></div>
+                    <div class="theme" id="green"></div>
+                    <div class="theme" id="blue"></div>
+                    <div class="theme" id="yellow"></div>
+                    <div class="theme" id="orange"></div>
+                    <div class="theme" id="pink"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

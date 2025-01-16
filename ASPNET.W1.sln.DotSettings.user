@@ -1,0 +1,5 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005C_002ENET_005CMSSTU_002EDB_002EUtility_005Cbin_005CDebug_005Cnet8_002E0_005CMSSTU_002EDB_002EUtility_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AController_002Ecs_002Fl_003AC_0021_003FUsers_003Fmsstu_003FAppData_003FLocal_003FJetBrains_003FShared_003FvAny_003FSourcesCache_003F8be3a835a33b22749161cd57a7225ef65e0c61c64c2bfd969e2e404130dd_003FController_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:Int64 x:Key="/Default/Dpa/Thresholds/=AspControllerActionDuration/@EntryIndexedValue">6410000</s:Int64>
+	</wpf:ResourceDictionary>
