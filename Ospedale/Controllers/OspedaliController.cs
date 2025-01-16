@@ -13,15 +13,15 @@ namespace Ospedale.Controllers
         }
         public IActionResult Lista()
         {
-            return View(DAOOspedali.GetInstance.GetRecords());
+            return View(DaoOspedali.GetInstance.GetRecords());
         }
         public IActionResult Dettagli(int id)
         {
-            return View(DAOOspedali.GetInstance.FindRecords(id));
+            return View(DaoOspedali.GetInstance.FindRecords(id));
         }
         public IActionResult? Elimina(int id)
         {
-            if (DAOOspedali.GetInstance().DeleteRecord(id))
+            if (DaoOspedali.GetInstance().DeleteRecord(id))
                 return RedirectToAction("Lista");
             return Content($"Errore nell'eliminazione dell' ospedale con id {id}");
         }
@@ -34,7 +34,7 @@ namespace Ospedale.Controllers
             Entity e = new Ospedale();
             e.TypeSort(parameters);
 
-            if (DAOOspedali.GetInstance().CreateRecord(e))
+            if (DaoOspedali.GetInstance().CreateRecord(e))
                 return RedirectToAction("Lista");
             return Content($"Errore nella creazione dell'ospedale {e.ToString()}");
         }
@@ -42,13 +42,13 @@ namespace Ospedale.Controllers
         {
             Entity e = new Ospedali();
             e.TypeSort(parameters);
-            if (DAOOspedali.GetInstance().UpdateRecord(e))
+            if (DaoOspedali.GetInstance().UpdateRecord(e))
                 return RedirectToAction("Lista");
             return Content($"Errore nella modifica dell'ospedale {e.ToString()}");
         }
         public IActionResult FormModifica(int id)
         {
-            var ospedale = DAOOspedali.GetInstance().FindRecord(id);
+            var ospedale = DaoOspedali.GetInstance().FindRecord(id);
             if (ospedale == null)
                 return Content($"Errore nel reperimento dell'ospedale con id {id}");
             return View((Ospedale)ospedale);

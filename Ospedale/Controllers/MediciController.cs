@@ -13,7 +13,7 @@ namespace Ospedale.Controllers
         }
         public IActionResult Lista()
         {
-            return View(DAOMedici.GetInstace().GetRecords());
+            return View(DaoMedici.GetInstace().GetRecords());
         }
 
         public IActionResult Dettagli(int id)
@@ -22,7 +22,7 @@ namespace Ospedale.Controllers
         }
         public IActionResult? Elimina(int id)
         {
-            if (DAOMedici.GetInstance().DeleteRecord(id))
+            if (DaoMedici.GetInstance().DeleteRecord(id))
                 return RedirectToAction("Lista");
             return Content($"Errore nell'eliminazione del medico con id {id}");
         }
@@ -35,7 +35,7 @@ namespace Ospedale.Controllers
             Entity e = new Medico();
             e.TypeSort(parameters);
 
-            if (DAOMedici.GetInstance().CreateRecord(e))
+            if (DaoMedici.GetInstance().CreateRecord(e))
                 return RedirectToAction("Lista");
             return Content($"Errore nella creazione del medico {e.ToString()}");
         }
@@ -44,13 +44,13 @@ namespace Ospedale.Controllers
             Entity e = new Medico();
             e.TypeSort(parameters);
 
-            if (DAOMedici.GetInstance().UpdateRecord(e))
+            if (DaoMedici.GetInstance().UpdateRecord(e))
                 return RedirectToAction("Lista");
             return Content($"Errore nella modifica del medico {e.ToString()}");
         }
         public IActionResult FormModifica()
         {
-            var medico = DAOMedici.GetInstance().FindRecord(id);
+            var medico = DaoMedici.GetInstance().FindRecord(id);
             if (medico == null)
                 return Content($"Errore nel reperimento del medico con id {id}");
             return View((Medico)medico);
