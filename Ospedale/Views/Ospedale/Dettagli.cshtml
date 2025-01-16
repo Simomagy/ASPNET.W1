@@ -1,0 +1,44 @@
+﻿@using Ospedale.Models
+@model MSSTU.DB.Utility.Entity
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dettagli @((Ospedale)Model).Nome</title>
+</head>
+<body>
+<div class="d-flex w-100 h-100 justify-center align-center">
+    <div class="card d-flex w-100 justify-center flex-col align-center gap-3">
+        <div class="card-header text-body-subtle w-100">
+            <i class="ti ti-book-2"></i>
+            @(((Ospedale)Model).Nome)
+        </div>
+        <div class="d-flex w-100 h-100 justify-center align-center">
+            <img class="rounded" src="@(((Ospedale)Model).Immagine)" alt="@(((Ospedale)Model).Nome)" />
+        </div>
+        <div class="tag-group">
+            <div class="tag">Nome: </div>
+            <div class="tag-text">@(Ospedale.Nome)</div>
+        </div>
+        <div class="tag-group">
+            <div class="tag">Sede: </div>
+            <div class="tag-text">@(Ospedale.Sede)</div>
+        </div>
+        <div class="tag-group">
+            <div class="tag">Pubblico: </div>
+            <div class="tag-text">@(Ospedale.Pubblico)</div>
+        </div>
+        <a class="card-footer w-100 hover-secondary d-flex align-center justify-center"
+           href="/Ospedale/ListaOspedali">
+            <i class="ti ti-chevrons-left me-2"></i>
+            Indietro
+        </a>
+    </div>
+</div>
+</body>
+</html>

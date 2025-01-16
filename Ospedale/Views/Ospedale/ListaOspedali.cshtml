@@ -1,0 +1,58 @@
+﻿@using Ospedale.Models
+@model List<MSSTU.DB.Utility.Entity>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ospedali</title>
+</head>
+<body>
+<div class="bg-dark-subtle shadow p-3 mb-2 rounded b1 border-subtle">
+    <h1 class="text-primary bold">Ospedali</h1>
+</div>
+
+<div class="divider my-3"></div>
+
+<div class="features-grid scroll-y">
+    @foreach (var entity in @Model)
+    {
+        var ospedale = (Ospedale)entity;
+        <div class="card d-flex w-fit justify-center flex-col align-center gap-3">
+            <div class="card-header text-body-subtle w-100">
+                <i class="ti ti-burger"></i>
+                @(ospedale.Nome)
+            </div>
+            <div class="d-flex w-100 h-100 justify-center align-center">
+                <img class="rounded" src="@(ospedale.Immagine)" alt="@(ospedale.Nome)" />
+            </div>
+            <div class="card-body text-center">
+                <div class="tag-group">
+                    <div class="tag">Nome: </div>
+                    <div class="tag-text">@(ospedale.Nome)</div>
+                </div>
+                <div class="tag-group">
+                    <div class="tag">Sede: </div>
+                    <div class="tag-text">@(ospedale.Sede)</div>
+                </div>
+                <div class="tag-group">
+                    <div class="tag">Pubblico: </div>
+                    <div class="tag-text">@(ospedale.Pubblico)</div>
+                </div>
+            </div>
+            <div class="d-flex gap-3 b1-top border-subtle w-100 p-2">
+                <a class="btn btn-info w-100 d-flex align-center justify-center"
+                   href="/Ospedale/Dettagli/@ospedale.Id">
+                    <i class="ti ti-brand-github me-2"></i>
+                    Dettagli
+                </a>
+            </div>
+        </div>
+    }
+</div>
+</body>
+</html>
