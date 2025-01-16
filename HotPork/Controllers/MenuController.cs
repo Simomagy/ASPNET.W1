@@ -1,7 +1,6 @@
 ﻿using HotPork.Models;
 using Microsoft.AspNetCore.Mvc;
 using MSSTU.DB.Utility;
-using Negozio.Models;
 
 namespace HotPork.Controllers;
 

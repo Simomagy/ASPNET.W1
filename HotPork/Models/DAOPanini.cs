@@ -1,8 +1,6 @@
 ﻿using MSSTU.DB.Utility;
-using System.ComponentModel;
-using HotPork.Models;
 
-namespace Negozio.Models
+namespace HotPork.Models
 {
     public class DAOPanini : IDAO
     {
