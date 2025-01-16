@@ -10,4 +10,8 @@
       <PackageReference Include="MSSTU.DB.Utility" Version="2.1.6" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Views\Ospedale\" />
+    </ItemGroup>
+
 </Project>

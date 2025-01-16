@@ -1,0 +1,140 @@
+﻿@page
+@model Ospedale.Views.Medici.FormModifica
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modifica Medico</title>
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+<h1>Modifica un medico</h1>
+<form action="/Medico/Modifica" onsubmit="return valida()" method="post">
+
+    <input type="hidden" name="id" value="@Model.Id" hidden readonly/>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="nome">Nome</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="nome" name="nome" placeholder="Nome" value="@Model.Nome">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Nome del medico</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="cognome">Cognome</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="cognome" name="cognome" placeholder="Gognome" value="@Model.Cognome">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Cognome del medico</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="dob">Dob</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="dob" name="dob" placeholder="Dob" value="@Model.Dob">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Data di nascita del medico</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="residenza">Residenza</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="residenza" name="residenza" placeholder="Residenza" value="@Model.Residenza">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Residenza del medico</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="reparto">Reparto</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="reparto" name="reparto" placeholder="Reparto" value="@Model.Reparto">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Reparto del medico</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="primario">Primario</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <div class="d-flex flex-row align-center justify-start">
+                <p class="toggle-note">No</p>
+                <label class="switch">
+                    <input type="checkbox" id="primario" name="primario" value="@Model.Primario"/>
+                    <div class="slider round"></div>
+                </label>
+                <p class="toggle-note">Yes</p>
+            </div>
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Il medico e primario?</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="pazientiGuariti">PazientiGuariti</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="number" class="hover" id="pazientiGuariti" name="pazientiGuariti" placeholder="pazientiGuariti" value="@Model.PazientiGuariti">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Numero pazienti guariti</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="totaleDecessi">totaleDecessi</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="totaleDecessi" name="totaleDecessi" placeholder="totaleDecessi" value="@Model.TotaleDecessi">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Totale dei decessi</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="ospedale">Ospedale</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="ospedale" name="ospedale" placeholder="Ospedale" value="@Model.Ospedale">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Numero del ospedale</p>
+            </div>
+        </div>
+    </div>
+    <div class="divider my-3"></div>
+    <input class="btn btn-success" type="submit" value="Salva" />
+</form>
+</body>
+</html>
