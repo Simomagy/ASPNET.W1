@@ -2,7 +2,7 @@
 @model Ospedale.Models.Ospedale
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -14,8 +14,8 @@
     <script src="~/js/site.js"></script>
 </head>
 <body>
-<h1>Modifica un ospedale</h1>
-<form action="/Ospedale/Modifica" onsubmit="return valida()" method="post">
+<h1>Modifica un medico</h1>
+<form action="/Ospedali/Modifica" onsubmit="return valida()" method="post">
 
     <input type="hidden" name="id" value="@Model.Id" hidden readonly/>
     <div class="form-row">
@@ -23,7 +23,7 @@
         <label for="nome">Nome</label>
         <i class="ti ti-chevron-right p-3"></i>
         <div class="input-group">
-            <input type="text" class="hover" id="nome" name="nome" placeholder="" value="@Model.Nome">
+            <input type="text" class="hover" id="nome" name="nome" placeholder="Nome" value="@Model.Nome">
             <div class="input-group-append">
                 <i class="ti ti-question-mark"></i>
                 <p class="note">Nome dell'ospedale</p>
@@ -35,10 +35,10 @@
         <label for="sede">Sede</label>
         <i class="ti ti-chevron-right p-3"></i>
         <div class="input-group">
-            <input type="text" class="hover" id="sede" name="sede" placeholder="" value="@Model.Sede">
+            <input type="text" class="hover" id="sede" name="sede" placeholder="Sede" value="@Model.Sede">
             <div class="input-group-append">
                 <i class="ti ti-question-mark"></i>
-                <p class="note">Sede dell'ospedale</p>
+                <p class="note">Sede del'ospedale</p>
             </div>
         </div>
     </div>
@@ -57,19 +57,7 @@
             </div>
             <div class="input-group-append">
                 <i class="ti ti-question-mark"></i>
-                <p class="note">L'ospedale è pubblico?</p>
-            </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="immagine">Immagine</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="immagine" name="immagine" placeholder="https://placehold.co/250x250" value="https://placehold.co/250x250">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Immagine dell'ospedale</p>
+                <p class="note">IL'ospedale è pubblico?</p>
             </div>
         </div>
     </div>

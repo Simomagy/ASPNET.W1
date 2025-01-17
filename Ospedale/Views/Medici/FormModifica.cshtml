@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>Modifica un medico</h1>
-<form action="/Medico/Modifica" onsubmit="return valida()" method="post">
+<form action="/Medici/Modifica" onsubmit="return valida()" method="post">
 
     <input type="hidden" name="id" value="@Model.Id" hidden readonly/>
     <div class="form-row">
@@ -35,7 +35,7 @@
         <label for="cognome">Cognome</label>
         <i class="ti ti-chevron-right p-3"></i>
         <div class="input-group">
-            <input type="text" class="hover" id="cognome" name="cognome" placeholder="Gognome" value="@Model.Cognome">
+            <input type="text" class="hover" id="cognome" name="cognome" placeholder="Cognome" value="@Model.Cognome">
             <div class="input-group-append">
                 <i class="ti ti-question-mark"></i>
                 <p class="note">Cognome del medico</p>
