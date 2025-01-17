@@ -3,97 +3,94 @@ using MSSTU.DB.Utility;
 
 public class DaoOspedali : IDAO
 {
-    public string TableName = "Ospedale";
-    private Database _database;
-
+    # region Singleton
+    private Database _db;
     private DaoOspedali()
     {
-        _database = new Database("Ospedale");
+        _db = new Database("Ospedale");
     }
     private static DaoOspedali _instance;
 
     public static DaoOspedali GetInstance()
     {
-        if (_instance == null)
-            _instance = new DaoOspedali();
-        return _instance;
+        return _instance ??= new DaoOspedali();
+    }
+    #endregion
+    public bool CreateRecord(Entity entity)
+    {
+
+        var parameters = new Dictionary<string,object>
+        {
+            {"@Sede",((Ospedale)entity).Sede.Replace("'", "''")},
+            {"@Nome",((Ospedale)entity).Nome.Replace("'", "''")},
+            {"@Pubblico",(((Ospedale)entity).Pubblico?"1":"0")}
+        };
+        const string query = "Insert INTO Ospedali (Sede,Nome,Pubblico) " +
+                             "VALUES (@Sede,@Nome,@Pubblico)";
+
+        return _db.UpdateDb(query, parameters);
     }
 
-    public bool CreateRecord(Entity entity)
+    public bool DeleteRecord(int recordId)
+    {
+        var parameters = new Dictionary<string, object>
         {
+            { "@id", recordId }
+        };
+        const string query = "DELETE FROM Ospedali WHERE id = @id";
 
-            var parametri = new Dictionary<string,object>
-            {
-                {"@Sede",((Ospedale)entity).Sede.Replace("'", "''")},
-                {"@Nome",((Ospedale)entity).Nome.Replace("'", "''")},
-                {"@Pubblico",(((Ospedale)entity).Pubblico?"1":"0")}
-            };
-            const string query = "Insert INTO Ospedali (Sede,Nome,Pubblico) " +
-                                 "VALUES (@Sede,@Nome,@Pubblico)";
-
-            return _database.UpdateDb(query, parametri);
-        }
-
-        public bool DeleteRecord(int recordId)
+        return _db.UpdateDb(query,parameters);
+    }
+    public Entity? FindRecord(int recordId)
+    {
+        var parameters = new Dictionary<string, object>
         {
-            var parametro = new Dictionary<string, object>
-            {
-                { "@id", recordId }
-            };
-            const string query = "DELETE FROM Ospedali WHERE id = @id";
+            { "@id", recordId }
+        };
 
-            return _database.UpdateDb(query,parametro);
-        }
-        public Entity? FindRecord(int recordId)
-        {
-            var parametro = new Dictionary<string, object>
-            {
-                { "@id", recordId }
-            };
+        const string query = "SELECT * FROM Ospedali WHERE id = @id";
 
-            const string query = "SELECT * FROM Ospedali WHERE id = @id";
+        var singleResponse = _db.ReadOneDb(query, parameters);
+        if(singleResponse == null)
+            return null;
 
-            var ris = _database.ReadOneDb(query, parametro);
-            if(ris == null)
-                return null;
+        Entity ospedale = new Ospedale();
+        ospedale.TypeSort(singleResponse);
 
-            Entity f = new Ospedale();
-            f.TypeSort(ris);
+        return ospedale;
 
-            return f;
+    }
 
-        }
-
-        public List<Entity> GetRecords()
-        {
-            const string query = "SELECT * FROM Ospedali";
-            List<Entity> entities = [];
-            var ris = _database.ReadDb(query);
-            if (ris == null)
-                return entities;
-
-            foreach( var r in ris)
-            {
-                Entity f = new Ospedale();
-                f.TypeSort(r);
-
-                entities.Add(f);
-            }
+    public List<Entity> GetRecords()
+    {
+        const string query = "SELECT * FROM Ospedali";
+        List<Entity> entities = [];
+        var fullResponse = _db.ReadDb(query);
+        if (fullResponse == null)
             return entities;
-        }
 
-        public bool UpdateRecord(Entity entity)
+        foreach( var singleResponse in fullResponse)
         {
-            var parametri = new Dictionary<string, object>
-            {
-                {"@id",entity.Id},
-                {"@Sede",((Ospedale)entity).Sede.Replace("'", "''")},
-                {"@Nome",((Ospedale)entity).Nome.Replace("'", "''")},
-                {"@Pubblico",(((Ospedale)entity).Pubblico?"1":"0")}
-            };
+            Entity ospedale = new Ospedale();
+            ospedale.TypeSort(singleResponse);
 
-            const string query = "UPDATE Ospedali SET Sede = @Sede, Nome = @Nome, Pubblico = @Pubblico WHERE id = @id ";
-
-            return _database.UpdateDb(query, parametri);
+            entities.Add(ospedale);
         }
+        return entities;
+    }
+
+    public bool UpdateRecord(Entity entity)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            {"@id",entity.Id},
+            {"@Sede",((Ospedale)entity).Sede.Replace("'", "''")},
+            {"@Nome",((Ospedale)entity).Nome.Replace("'", "''")},
+            {"@Pubblico",(((Ospedale)entity).Pubblico?"1":"0")}
+        };
+
+        const string query = "UPDATE Ospedali SET Sede = @Sede, Nome = @Nome, Pubblico = @Pubblico WHERE id = @id ";
+
+        return _db.UpdateDb(query, parameters);
+    }
 }
