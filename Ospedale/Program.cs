@@ -21,6 +21,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 //app.MapRazorPages();
-app.MapControllerRoute(name:"default", pattern:"{controller=Home}/{action=Home}/{id?}")
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Home}/{id?}");
 
 app.Run();

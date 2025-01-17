@@ -1,9 +1,8 @@
-﻿@page
-@model Ospedale.Views.Medici.Lista
+﻿@using Ospedale.Models
+@model List<MSSTU.DB.Utility.Entity>
 
 @{
     Layout = "_Layout";
-    var medico = (Medico)entity;
 }
 
 <!DOCTYPE html>
@@ -27,6 +26,7 @@
 <div class="features-grid scroll-y">
     @foreach (var entity in @Model)
     {
+    var medico = (Medico)entity;
         <div class="card d-flex w-fit justify-center flex-col align-center gap-3">
             <div class="card-header text-body-subtle w-100">
                 <i class="ti ti-burger"></i>
