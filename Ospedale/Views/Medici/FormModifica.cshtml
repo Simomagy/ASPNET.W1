@@ -1,140 +1,195 @@
-﻿@* @using Ospedale.Models *@
+@using Ospedale.Models 
 @model Ospedale.Models.Medico
 
-@{
-    Layout = "_Layout";
-}
+
 
 <!DOCTYPE html>
-
 <html>
 <head>
+
+    <!-- load JS files -->
+    <script src="~/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h -->
+    <script src="~/js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+
+    <!-- Linking SwiperJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="~/css/templatemo-style.css">                                   <!-- Templatemo style -->
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css">                                  Swiper style -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/css/slider.css">
+
     <meta charset="utf-8" />
-    <title>Modifica Medico</title>
-    <script src="~/js/site.js"></script>
+    <title>Modifica medico</title>
+    <link rel="stylesheet" href="~/css/stile.css">
 </head>
 <body>
-<h1>Modifica un medico</h1>
-<form action="/Medici/Modifica" onsubmit="return valida()" method="post">
 
-    <input type="hidden" name="id" value="@Model.Id" hidden readonly/>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="nome">Nome</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="nome" name="nome" placeholder="Nome" value="@Model.Nome">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Nome del medico</p>
-            </div>
+
+<div class="tm-header">
+    <div class="container-fluid">
+        <div class="tm-header-inner">
+            <a href="#" class="navbar-brand tm-site-name">PeOne</a>
+
+            <!-- navbar -->
+            <nav class="navbar tm-main-nav">
+
+                <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                    &#9776;
+                </button>
+
+                <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Medici.html" class="nav-link">Medici</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Ospedali.html" class="nav-link">Ospedali</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
         </div>
     </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="cognome">Cognome</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="cognome" name="cognome" placeholder="Cognome" value="@Model.Cognome">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Cognome del medico</p>
+</div>
+
+<div class="ySpacer"></div>
+
+<div class="sfondo">
+    <div class="container">
+        <h1>Aggiungi medico</h1>
+        <form action="/Medico/Modifica" onsubmit="return valida()" method="post" class="form-layout">
+
+            <input type="hidden" name="id" value="@Model.Id" hidden readonly/>
+
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Medico" value="@Model.Nome">
             </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="dob">Dob</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="dob" name="dob" placeholder="Dob" value="@Model.Dob">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Data di nascita del medico</p>
+            <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Cognome" value="@Model.Cognome">
             </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="residenza">Residenza</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="residenza" name="residenza" placeholder="Residenza" value="@Model.Residenza">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Residenza del medico</p>
+            <div class="form-group">
+                <label for="dob">Dob</label>
+                <input type="text" id="dob" name="dob" placeholder="Dob" value="@Model.Dob">
             </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="reparto">Reparto</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="reparto" name="reparto" placeholder="Reparto" value="@Model.Reparto">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Reparto del medico</p>
+            <div class="form-group">
+                <label for="residenza">Residenza</label>
+                <input type="text" id="residenza" name="residenza" placeholder="Residenza" value="@Model.Residenza">
             </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="primario">Primario</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <div class="d-flex flex-row align-center justify-start">
-                <p class="toggle-note">No</p>
+            <div class="form-group">
+                <label for="reparto">Reparto</label>
+                <input type="text" id="reparto" name="reparto" placeholder="Reparto" value="@Model.Reparto">
+            </div>
+            <div class="form-group checkbox-group">
+                <label for="primario">Primario</label>
                 <label class="switch">
-                    <input type="checkbox" id="primario" name="primario" value="@Model.Primario"/>
-                    <div class="slider round"></div>
+                    <input type="checkbox" id="primario" name="primario" value="@Model.Primario" @(Model.Primario ? "checked" : "")>
+                    <span class="slider"></span>
                 </label>
-                <p class="toggle-note">Yes</p>
             </div>
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Il medico e primario?</p>
+            <div class="form-group">
+                <label for="pazientiGuariti">Pazienti Guariti</label>
+                <input type="number" id="pazientiGuariti" name="pazientiGuariti" placeholder="Pazienti guariti" value="@Model.PazientiGuariti">
+            </div>
+            <div class="form-group">
+                <label for="totaleDecessi">Totale Decessi</label>
+                <input type="text" id="totaleDecessi" name="totaleDecessi" placeholder="Totale decessi" value="@Model.TotaleDecessi">
+            </div>
+            <div class="form-group">
+                <label for="ospedale">Ospedale</label>
+                <input type="text" id="ospedale" name="ospedale" placeholder="Ospedale" value="@Model.Ospedale">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salva" class="submit-button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="ySpacer"></div>
+
+<footer class="tm-footer">
+    <div class="container-fluid">
+        <div class="riga">
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                <div class="tm-footer-content-box">
+                    <h3 class="tm-gold-text tm-title tm-footer-content-box-title">PeOne </h3>
+                    <div class="tm-gray-bg">
+                        <p>Lavoro di gruppo:</p>
+                        <p>Simone, Matteo, Paolone, Luca, Riccardo, Gennà</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="clearfix hidden-lg-up"></div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                <div class="tm-footer-content-box">
+
+                    <h3 class="tm-gold-text tm-title tm-footer-content-box-title">I nostri Principi </h3>
+                    <p class="tm-margin-b-30">Il rispetto del paziente è il fondamento di un'etica medica intesa come nuova pietas finalizzata al bene altrui.</p><hr class="tm-margin-b-30">
+                    <p class="tm-margin-b-30">D'un tratto vidi chiaro: la medicina era una scienza vivente! [...] vivente in Dio; giacché la vita non era pensabile per me fuori di Lui.</p><hr class="tm-margin-b-30">
+                    <p class="tm-margin-b-30">Della medicina, [...], tutto si può dire tranne che sia una scienza esatta.</p>
+                    <a href="https://it.wikiquote.org/wiki/Medicina" class="tm-btn tm-btn-gray text-uppercase">Leggi Altro</a>
+
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                <div class="tm-footer-content-box">
+
+                    <h3 class="tm-gold-text tm-title tm-footer-content-box-title">CONI </h3>
+                    <div class="tm-margin-b-30">
+                        <img src="https://static.tecnichenuove.it/medicinaintegratanews/2022/06/future-health-index.jpeg" alt="Image" class="tm-footer-thumbnail">
+                        <img src="https://www.ipazia-dcc.it/web/wp-content/uploads/2021/09/Medicina-rigenerativa-cose-e-quando-viene-utilizzata.jpg" alt="Image" class="tm-footer-thumbnail">
+                        <img src="https://www.regione.lombardia.it/wps/wcm/connect/644ba34e-138e-4a09-b960-ae2af8ef8b14/aset-social-medicina-generale.jpg?MOD=AJPERES" alt="Image" class="tm-footer-thumbnail">
+                        <img src="https://uniperte.info/wp-content/uploads/2021/02/specialistica-medicina.jpeg" alt="Image" class="tm-footer-thumbnail">
+                        <img src="https://www.enfeasalute.it/wp-content/uploads/2021/06/Perche%CC%81-si-chiama-medicina-nucleare.jpeg" alt="Image" class="tm-footer-thumbnail">
+                        <img src="https://www.coni.it/images/medicina/slide/Medicina-9.jpg" alt="Image" class="tm-footer-thumbnail">
+                    </div>
+                    <p class="tm-margin-b-20">Il Comitato olimpico nazionale italiano o CONI è l'organismo di governo dello sport in Italia.</p>
+                    <a href="https://www.coni.it/it/medicina-dello-sport.html" class="tm-btn tm-btn-gray text-uppercase">Visita il Sito</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 tm-copyright-col">
+                <p class="tm-copyright-text">Copyright Nebula Studios </p>
             </div>
         </div>
     </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="pazientiGuariti">PazientiGuariti</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="number" class="hover" id="pazientiGuariti" name="pazientiGuariti" placeholder="pazientiGuariti" value="@Model.PazientiGuariti">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Numero pazienti guariti</p>
-            </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="totaleDecessi">totaleDecessi</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="totaleDecessi" name="totaleDecessi" placeholder="totaleDecessi" value="@Model.TotaleDecessi">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Totale dei decessi</p>
-            </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <i class="ti ti-chevrons-right p-3"></i>
-        <label for="ospedale">Ospedale</label>
-        <i class="ti ti-chevron-right p-3"></i>
-        <div class="input-group">
-            <input type="text" class="hover" id="ospedale" name="ospedale" placeholder="Ospedale" value="@Model.Ospedale">
-            <div class="input-group-append">
-                <i class="ti ti-question-mark"></i>
-                <p class="note">Numero del ospedale</p>
-            </div>
-        </div>
-    </div>
-    <div class="divider my-3"></div>
-    <input class="btn btn-success" type="submit" value="Salva" />
-</form>
+</footer>
 </body>
 </html>
