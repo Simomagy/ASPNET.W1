@@ -5,7 +5,7 @@ namespace Ospedale.Controllers
     public class HomeController : Controller
     {
         // GET
-        public IActionResult Index()
+        public IActionResult Home()
         {
             return View();
         }
