@@ -13,7 +13,7 @@ namespace Ospedale.Controllers
         }
         public IActionResult Lista()
         {
-            return View(DaoMedici.GetInstace().GetRecords());
+            return View(DaoMedici.GetInstance().GetRecords());
         }
 
         public IActionResult Dettagli(int id)
@@ -48,7 +48,7 @@ namespace Ospedale.Controllers
                 return RedirectToAction("Lista");
             return Content($"Errore nella modifica del medico {e.ToString()}");
         }
-        public IActionResult FormModifica()
+        public IActionResult FormModifica(int id)
         {
             var medico = DaoMedici.GetInstance().FindRecord(id);
             if (medico == null)
