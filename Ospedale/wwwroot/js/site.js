@@ -35,11 +35,6 @@
         alert("Casa Editrice non valido");
         return false;
     }
-    if (primario.value.length < 2 || primario.value.length > 240)
-    {
-        alert("Casa Editrice non valido");
-        return false;
-    }
     if (parseInt(document.getElementById("pazientiGuariti") < 2 || pazientiGuariti.value.length > 5000))
     {
         alert("Casa Editrice non valido");
