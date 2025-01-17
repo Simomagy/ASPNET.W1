@@ -13,11 +13,11 @@ namespace Ospedale.Controllers
         }
         public IActionResult Lista()
         {
-            return View(DaoOspedali.GetInstance.GetRecords());
+            return View(DaoOspedali.GetInstance().GetRecords());
         }
         public IActionResult Dettagli(int id)
         {
-            return View(DaoOspedali.GetInstance.FindRecords(id));
+            return View(DaoOspedali.GetInstance().FindRecord(id));
         }
         public IActionResult? Elimina(int id)
         {
@@ -31,7 +31,7 @@ namespace Ospedale.Controllers
         }
         public IActionResult Inserisci(Dictionary<string, string> parameters)
         {
-            Entity e = new Ospedale();
+            Entity e = new Models.Ospedale();
             e.TypeSort(parameters);
 
             if (DaoOspedali.GetInstance().CreateRecord(e))
@@ -40,7 +40,7 @@ namespace Ospedale.Controllers
         }
         public IActionResult Modifica(Dictionary<string, string> parameters)
         {
-            Entity e = new Ospedali();
+            Entity e = new Models.Ospedale();
             e.TypeSort(parameters);
             if (DaoOspedali.GetInstance().UpdateRecord(e))
                 return RedirectToAction("Lista");
@@ -51,7 +51,7 @@ namespace Ospedale.Controllers
             var ospedale = DaoOspedali.GetInstance().FindRecord(id);
             if (ospedale == null)
                 return Content($"Errore nel reperimento dell'ospedale con id {id}");
-            return View((Ospedale)ospedale);
+            return View((Models.Ospedale)ospedale);
         }
     }
 }
