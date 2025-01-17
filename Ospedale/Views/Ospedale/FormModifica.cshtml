@@ -1,0 +1,80 @@
+﻿@using Ospedale.Models
+@model MSSTU.DB.Utility.Entity
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modifica Ospedale</title>
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+<h1>Modifica un ospedale</h1>
+<form action="/Ospedale/Modifica" onsubmit="return valida()" method="post">
+
+    <input type="hidden" name="id" value="@Model.Id" hidden readonly/>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="nome">Nome</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="nome" name="nome" placeholder="" value="@Model.Nome">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Nome dell'ospedale</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="sede">Sede</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="sede" name="sede" placeholder="" value="@Model.Sede">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Sede dell'ospedale</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="pubblico">Pubblico</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <div class="d-flex flex-row align-center justify-start">
+                <p class="toggle-note">No</p>
+                <label class="switch">
+                    <input type="checkbox" id="pubblico" name="pubblico" value="@Model.Pubblico"/>
+                    <div class="slider round"></div>
+                </label>
+                <p class="toggle-note">Yes</p>
+            </div>
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">L'ospedale è pubblico?</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <i class="ti ti-chevrons-right p-3"></i>
+        <label for="immagine">Immagine</label>
+        <i class="ti ti-chevron-right p-3"></i>
+        <div class="input-group">
+            <input type="text" class="hover" id="immagine" name="immagine" placeholder="https://placehold.co/250x250" value="@Model.Immagine">
+            <div class="input-group-append">
+                <i class="ti ti-question-mark"></i>
+                <p class="note">Immagine dell'ospedale</p>
+            </div>
+        </div>
+    </div>
+    <div class="divider my-3"></div>
+    <input class="btn btn-success" type="submit" value="Salva" />
+</form>
+</body>
+</html>

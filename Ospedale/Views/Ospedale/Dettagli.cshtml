@@ -1,8 +1,9 @@
 ﻿@using Ospedale.Models
 @model MSSTU.DB.Utility.Entity
 
+
 @{
-    Layout = "_Layout";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -23,15 +24,15 @@
         </div>
         <div class="tag-group">
             <div class="tag">Nome: </div>
-            <div class="tag-text">@(Ospedale.Nome)</div>
+            <div class="tag-text">@(((Ospedale)Model).Nome)</div>
         </div>
         <div class="tag-group">
             <div class="tag">Sede: </div>
-            <div class="tag-text">@(Ospedale.Sede)</div>
+            <div class="tag-text">@(((Ospedale)Model).Sede)</div>
         </div>
         <div class="tag-group">
             <div class="tag">Pubblico: </div>
-            <div class="tag-text">@(Ospedale.Pubblico)</div>
+            <div class="tag-text">@(((Ospedale)Model).Pubblico)</div>
         </div>
         <a class="card-footer w-100 hover-secondary d-flex align-center justify-center"
            href="/Ospedale/ListaOspedali">
