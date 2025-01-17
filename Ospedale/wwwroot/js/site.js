@@ -17,32 +17,32 @@
     }
     if (cognome.value.length < 2 || cognome.value.length > 140)
     {
-        alert("Testata non valido");
+        alert("Cognome non valido");
         return false;
     }
     if (dob.value.length < 2 || dob.value.length > 240)
     {
-        alert("Casa Editrice non valido");
+        alert("Data non valida");
         return false;
     }
     if (residenza.value.length < 2 || residenza.value.length > 240)
     {
-        alert("Casa Editrice non valido");
+        alert("Residenza non valida");
         return false;
     }
     if (reparto.value.length < 2 || reparto.value.length > 240)
     {
-        alert("Casa Editrice non valido");
+        alert("Reparto non valido");
         return false;
     }
     if (primario.value.length < 2 || primario.value.length > 240)
     {
-        alert("Casa Editrice non valido");
+        alert("Casa Editrice non valido"); // questo è un bool, non so se è giusto
         return false;
     }
     if (parseInt(document.getElementById("pazientiGuariti") < 2 || pazientiGuariti.value.length > 5000))
     {
-        alert("Casa Editrice non valido");
+        alert("Numero non valido");
         return false;
     }
     if (parseInt(document.getElementById("totaleDecessi").value) < 1 || totaleDecessi.value.length > 300)
@@ -52,7 +52,7 @@
     }
     if ((parseInt(document.getElementById("ospedale").value) < 1 || ospedale.value.length > 3))
     {
-        alert("Casa Editrice non valido");
+        alert("Numero non valido");
         return false;
     }
     return true;
