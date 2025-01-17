@@ -7,7 +7,7 @@ public class DaoOspedali : IDAO
     private Database _db;
     private DaoOspedali()
     {
-        _db = new Database("Ospedale");
+        _db = new Database("Ospedale", "DESKTOP-2GH96H6");
     }
     private static DaoOspedali _instance;
 

@@ -11,7 +11,7 @@ namespace Ospedale.Controllers
         {
             return View();
         }
-        public IActionResult Lista()
+        public IActionResult ListaOspedali()
         {
             return View(DaoOspedali.GetInstance().GetRecords());
         }
