@@ -13,7 +13,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     align-items: center;
-    background-color: #cc9900;
+    background-color: #9ac7cd;
     width: 100%;
     padding: 50px;
     justify-content: center;
@@ -33,7 +33,7 @@
 
 .card-list .card-item {
     height: auto;
-    color: #000000;
+    color: white;
     user-select: none;
     padding: 35px;
     display: flex;
@@ -42,9 +42,8 @@
     justify-content: center;
     border-radius: 10px;
     backdrop-filter: blur(30px);
-    background: #30270fbe;
+    background: #292929;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    display: flex;
 }
 
     .card-list .card-item .user-image {

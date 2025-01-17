@@ -1,11 +1,3 @@
-/* 
-
-Classic Template
-
-http://www.templatemo.com/tm-488-classic
-
------------------------------*/
-
 body {
     color: #8c8c8c;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -60,7 +52,7 @@ h2 {
 }
 
 .tm-site-name {
-    color: #cc9900;
+    color: #9ac7cd;
     display: block;
     font-size: 2.6rem;
     font-weight: 400;
@@ -80,11 +72,11 @@ h2 {
 .nav-link:hover,
 .nav-link:focus {
     color: white;
-    background-color: #cc9900;
+    background-color: #9ac7cd;
 }
 
 .tm-gold-text {
-    color: #cc9900;
+    color: #9ac7cd;
 }
 
 .tm-section {
@@ -93,8 +85,8 @@ h2 {
 }
 
 .tm-home-img-container {
-    background-image: url('../img/tm-home-img.jpg');
-    background-size: auto;
+    background-image: url('https://wallpaperaccess.com/full/1282794.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
@@ -148,7 +140,7 @@ h4 {
 
 .tm-btn {
     color: white;
-    background-color: #cc9900;
+    background-color: #9ac7cd;
     border: none;
     border-radius: 5px;
     display: inline-block;
@@ -157,7 +149,7 @@ h4 {
 
     .tm-btn:hover,
     .tm-btn:focus {
-        background-color: #906E09;
+        background-color: #9ac7cd;
         color: white;
         outline: none;
     }
@@ -200,7 +192,7 @@ h4 {
 }
 
 .tm-text-link {
-    color: #006699;
+    color: #9ac7cd;
     line-height: 2.8;
     text-decoration: underline;
 }
@@ -240,7 +232,7 @@ h4 {
 
 .tm-footer {
     color: #c6c6c6;
-    background-color: #191919;
+    background-color: #9ac7cd;
     background-image: url('../img/classic-pattern-bg.png');
     font-size: 1rem;
     padding-top: 40px;
@@ -285,7 +277,7 @@ p {
 }
 
 .tm-gray-bg {
-    background-color: #cc9900;
+    background-color: #9ac7cd;
     color: black;
     padding: 30px 20px 20px;
 }
@@ -309,7 +301,7 @@ p {
 }
 
     .form-control:focus {
-        border-color: #CC9900;
+        border-color: #9ac7cd;
     }
 
 .tm-form-description {

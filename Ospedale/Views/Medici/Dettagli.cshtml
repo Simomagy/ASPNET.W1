@@ -73,18 +73,19 @@
             <div>
                 <img class="foto" src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="@(medico.Nome)" />
             </div>
-            <div>@(medico.Nome) @(medico.Cognome)</div>
-            <div>Data di nascita: @(medico.Dob)</div>
-            <div>Residenza: @(medico.Residenza)</div>
-            <div>Reparto: @(medico.Reparto)</div>
-            <div>Primario: @(primario)</div>
-            <div>Pazienti guariti: @(medico.PazientiGuariti)</div>
-            <div>Totale decessi: @(medico.TotaleDecessi)</div>
-            <div>Ospedale: @(medico.Ospedale.Nome)</div>
+            <div Class="nome" >@(medico.Nome) @(medico.Cognome)</div>
+            <div> <strong>Data di nascita:</strong> @(medico.Dob)</div>
+            <div> <Strong>Residenza: </Strong>@(medico.Residenza)</div>
+            <div> <Strong>Reparto:</Strong> @(medico.Reparto)</div>
+            <div> <Strong>Primario: </Strong>@(primario)</div>
+            <div> <Strong>Pazienti guariti:</Strong> @(medico.PazientiGuariti)</div>
+            <div> <Strong>Totale decessi:</Strong> @(medico.TotaleDecessi)</div>
+            <div> <Strong>Ospedale:</Strong> @(medico.Ospedale.Nome)</div>
         </div>
 
     </div>
 
+    <div class="spacerBlu"></div>
     <footer class="tm-footer">
         <div class="container-fluid">
             <div class="riga">

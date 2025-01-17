@@ -48,7 +48,7 @@ namespace Ospedale.Controllers
         }
         public IActionResult FormModifica(int id)
         {
-            var ospedale = DaoOspedali.GetInstance().FindRecord(id);
+            Models.Ospedale ospedale = (Models.Ospedale)DaoOspedali.GetInstance().FindRecord(id);
             if (ospedale == null)
                 return Content($"Errore nel reperimento dell'ospedale con id {id}");
             return View((Models.Ospedale)ospedale);

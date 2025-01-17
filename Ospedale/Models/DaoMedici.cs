@@ -8,7 +8,7 @@ public class DaoMedici : IDAO
     private Database _db;
     private DaoMedici()
     {
-        _db = new Database("Ospedale", "DESKTOP-2GH96H6");
+        _db = new Database("Ospedale", "DESKTOP-0EJOTBJ");
     }
     private static DaoMedici _instance;
 
