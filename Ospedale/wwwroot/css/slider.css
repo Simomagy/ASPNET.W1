@@ -1,0 +1,109 @@
+/* Importing Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}*/
+
+.bodySlider {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    align-items: center;
+    background-color: #cc9900;
+    width: 100%;
+    padding: 50px;
+    justify-content: center;
+    display: flex;
+    padding-top: 40px
+}
+
+.swiper-wrapper {
+    box-sizing: border-box;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 70px 55px;
+}
+
+.card-list .card-item {
+    height: auto;
+    color: #000000;
+    user-select: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background: #30270fbe;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+}
+
+    .card-list .card-item .user-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+        margin-bottom: 40px;
+        border: 3px solid #fff;
+        padding: 4px;
+    }
+
+    .card-list .card-item .user-profession {
+        font-size: 1.15rem;
+        color: #e3e3e3;
+        font-weight: 500;
+        margin: 14px 0 40px;
+    }
+
+    .card-list .card-item .message-button {
+        font-size: 1.25rem;
+        padding: 10px 35px;
+        color: #292929;
+        border-radius: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid transparent;
+        transition: 0.2s ease;
+    }
+
+        .card-list .card-item .message-button:hover {
+            background: rgba(255, 255, 255, 0.425);
+            border: 1px solid #fff;
+            color: #fff;
+        }
+
+.slider-wrapper .swiper-pagination-bullet {
+    background: #fff;
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.slider-wrapper .swiper-slide-button {
+    color: #fff;
+    margin-top: -55px;
+    transition: 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .slider-wrapper {
+        margin: 0 10px 40px;
+    }
+
+        .slider-wrapper .swiper-slide-button {
+            display: none;
+        }
+}
