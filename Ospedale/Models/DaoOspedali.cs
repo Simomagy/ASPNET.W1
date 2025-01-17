@@ -73,7 +73,8 @@ public class DaoOspedali : IDAO
         {
             Entity ospedale = new Ospedale();
             ospedale.TypeSort(singleResponse);
-
+            ospedale.Id = int.Parse(singleResponse["id"]);
+            
             entities.Add(ospedale);
         }
         return entities;

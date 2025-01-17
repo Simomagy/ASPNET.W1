@@ -43,7 +43,7 @@ namespace Ospedale.Controllers
             Entity e = new Models.Ospedale();
             e.TypeSort(parameters);
             if (DaoOspedali.GetInstance().UpdateRecord(e))
-                return RedirectToAction("Lista");
+                return RedirectToAction("ListaOspedali");
             return Content($"Errore nella modifica dell'ospedale {e.ToString()}");
         }
         public IActionResult FormModifica(int id)
