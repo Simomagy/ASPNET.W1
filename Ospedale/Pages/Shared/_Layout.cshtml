@@ -19,23 +19,23 @@
             class="float-navbar sticky bg-dark-subtle d-flex gap-5 blur-10 p-3 w-fit h-auto b1 border-subtle justify-between align-center rounded">
         <a class="d-flex align-center" asp-area="" asp-page="/Index">
 				<span class="b1 border-primary shadow rounded ns-icon ns-icon-md p-1 me-3">
-					<img alt="NS Core" class="img-fluid shadow-primary" src="~/assets/base-light.ico"/>
+					<img alt="PeOne" class="img-fluid shadow-primary" src="~/assets/base-light.ico"/>
 				</span>
-            <h5 class="text-primary shadow-primary pointer bold">Nebula Studios</h5>
+            <h5 class="text-primary shadow-primary pointer bold">PeOne</h5>
         </a>
         <div class="d-flex w-auto gap-3 align-center">
-            <a class="btn @(currentController == "Home" && currentAction == "Index" ? "btn-primary shadow-primary" : "") bold" asp-controller="Home" asp-action="Index">
+            <a class="btn @(currentController == "Home" && currentAction == "Home" ? "btn-primary shadow-primary" : "") bold" asp-controller="Home" asp-action="Home">
                 <i class="ti ti-home p-1"></i>
                 Home
             </a>
 
             <a class="btn @(currentController == "Medici" && currentAction == "Lista" ? "btn-primary shadow-primary" : "")" asp-controller="Medici" asp-action="Lista">
                 <i class="ti ti-burger p-1"></i>
-                Menu Panini
+                Medici
             </a>
             <a class="btn @(currentController == "Ospedali" && currentAction == "Lista" ? "btn-primary shadow-primary" : "")" asp-controller="Ospedali" asp-action="Lista">
                 <i class="ti ti-burger p-1"></i>
-                Menu Panini
+                Ospedali
             </a>
         </div>
         <div class="divider-vert"></div>

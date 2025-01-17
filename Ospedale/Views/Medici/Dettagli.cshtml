@@ -1,13 +1,16 @@
-﻿@page
-@using Ospedale.Models
+﻿@using Ospedale.Models
 @model MSSTU.DB.Utility.Entity
 
+@{
+    var medico = (Medico)Model;
+    var primario = medico.Primario ? "Sì" : "No";
+}
 <!DOCTYPE html>
 
 <html>
 <head>
     <!-- load JS files -->
-    <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>             <!-- jQuery (https://jquery.com/download/) -->
     <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h -->
     <script src="js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
     <!-- Linking SwiperJS script -->
@@ -21,16 +24,16 @@
 
     <!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
-    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">                                  <!-- Swiper style -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="~/css/templatemo-style.css">                                   <!-- Templatemo style -->
+    @* <link rel="stylesheet" href="css/swiper-bundle.min.css">                                  <!-- Swiper style --> *@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="~/css/slider.css">
 
-    <title>Dettagli @((Ospedale)Model).Nome @((Ospedale)Model).Cognome</title>
+    <title>Dettagli</title>
 
-    <link rel="stylesheet" href="css/dettagli.css" />
+    <link rel="stylesheet" href="~/css/dettagli.css" />
 
 </head>
 <body>
@@ -71,65 +74,16 @@
     <div class="containerDettagli">
         <div class="carta">
             <div>
-                <img class="foto" src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="@(((Ospedale)Model).Nome)" />
+                <img class="foto" src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="@(medico.Nome)" />
             </div>
-            <div>@(((Medico)Model).Nome) @(((Medico)Model).Cognome)</div>
-            <div>Data di nascita: @(((Medico)Model).Dob)</div>
-            <div>Residenza: @(((Medico)Model).Residenza)</div>
-            <div>Reparto: @(((Medico)Model).Reparto)</div>
-            <div>Primario: (@(((Medico)Model).Primario) ? Sì : No)</div>
-            <div>Pazienti guariti: @(((Medico)Model).PazientiGuariti)</div>
-            <div>Totale decessi: @(((Medico)Model).TotaleDecessi)</div>
-            <div>Ospedale: @(((Medico)Model).Ospedale.Nome)</div>
-        </div>
-
-    </div>
-
-
-    <div class="bodySlider">
-        <div class="container swiper">
-            <div class="slider-wrapper">
-                <div class="card-list swiper-wrapper">
-
-                    <!-- Qua andrà la lista di tutti i medici -->
-
-                    <div class="card-item swiper-slide">
-                        <img src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="Medico" class="user-image">
-                        <h2 class="user-name">DottorGay</h2>
-                        <a href="">
-                            <button class="message-button">Dettagli</button>
-                        </a>
-                    </div>
-
-                    <div class="card-item swiper-slide">
-                        <img src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="Medico" class="user-image">
-                        <h2 class="user-name">DottorGay</h2>
-                        <a href="">
-                            <button class="message-button">Dettagli</button>
-                        </a>
-                    </div>
-
-                    <div class="card-item swiper-slide">
-                        <img src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="Medico" class="user-image">
-                        <h2 class="user-name">DottorGay</h2>
-                        <a href="">
-                            <button class="message-button">Dettagli</button>
-                        </a>
-                    </div>
-
-                    <div class="card-item swiper-slide">
-                        <img src="https://s3-eu-west-1.amazonaws.com/miodottore.it/doctor/0b295e/0b295ed78218ba885e6e7fe8a2519a9c_large.jpg" alt="Medico" class="user-image">
-                        <h2 class="user-name">DottorGay</h2>
-                        <a href="">
-                            <button class="message-button">Dettagli</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="swiper-pagination"></div>
-                <div class="swiper-slide-button swiper-button-prev"></div>
-                <div class="swiper-slide-button swiper-button-next"></div>
-            </div>
+            <div>@(medico.Nome) @(medico.Cognome)</div>
+            <div>Data di nascita: @(medico.Dob)</div>
+            <div>Residenza: @(medico.Residenza)</div>
+            <div>Reparto: @(medico.Reparto)</div>
+            <div>Primario: @(primario)</div>
+            <div>Pazienti guariti: @(medico.PazientiGuariti)</div>
+            <div>Totale decessi: @(medico.TotaleDecessi)</div>
+            <div>Ospedale: @(medico.Ospedale.Nome)</div>
         </div>
 
     </div>

@@ -22,7 +22,7 @@ public class DaoMedici : IDAO
         const string query = @"
                 SELECT
                     m.id as idMedico, m.nome, m.cognome, m.dob, m.residenza, m.reparto, m.primario, m.pazientiGuariti, m.totaleDecessi,
-                    o.id as idOspedale, o.sede, o.nome, o.pubblico
+                    o.id as idOspedale, o.sede, o.nome as nomeOspedale, o.pubblico
                 FROM Medici m
                 JOIN Ospedali o ON m.ospedale = o.id;";
         List<Entity> mediciRecords = [];
@@ -33,10 +33,13 @@ public class DaoMedici : IDAO
         {
             var medico = new Medico();
             medico.TypeSort(singleResponse);
+            medico.Id = int.Parse(singleResponse["idmedico"]);
 
             var ospedale = new Ospedale();
             ospedale.TypeSort(singleResponse);
             medico.Ospedale = ospedale;
+            medico.Ospedale.Id = int.Parse(singleResponse["idospedale"]);
+            medico.Ospedale.Nome = singleResponse["nomeospedale"];
 
             mediciRecords.Add(medico);
         }
@@ -103,7 +106,13 @@ public class DaoMedici : IDAO
             { "@id", recordId }
         };
 
-        const string query = "SELECT * FROM Medici JOIN dbo.Ospedali O on O.id = Medici.ospedale WHERE Medici.id = @id";
+        const string query = @"
+                SELECT 
+                    m.id as idMedico, m.nome, m.cognome, m.dob, m.residenza, m.reparto, m.primario, m.pazientiGuariti, m.totaleDecessi, 
+                    o.id as idOspedale, o.sede, o.nome as nomeOspedale, o.pubblico 
+                FROM Medici m 
+                  JOIN Ospedali o on m.ospedale = o.id 
+                WHERE m.id = @id";
 
         var singleResponse = _db.ReadOneDb(query, parameters);
         if(singleResponse == null)
@@ -111,11 +120,21 @@ public class DaoMedici : IDAO
 
         var medico = new Medico();
         medico.TypeSort(singleResponse);
+        medico.Id = int.Parse(singleResponse["idmedico"]);
 
         var ospedale = new Ospedale();
         ospedale.TypeSort(singleResponse);
         medico.Ospedale = ospedale;
+        medico.Ospedale.Id = int.Parse(singleResponse["idospedale"]);
+        medico.Ospedale.Nome = singleResponse["nomeospedale"];
 
         return medico;
+    }
+
+    public List<Medico> GetTop10()
+    {
+        var entities = GetRecords();
+        var medici = entities.Cast<Medico>().ToList();
+        return medici.OrderByDescending<Medico, object>(medico => medico.PazientiGuariti).Take(10).ToList();
     }
 }

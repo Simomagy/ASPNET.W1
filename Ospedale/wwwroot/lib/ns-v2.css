@@ -22,7 +22,7 @@
 html {
     --background: #252422;
     --background-subtle: #25242263;
-    --primary: #eb5f28;
+    --primary: #cc9900;
     --success: #00ff73;
     --success-subtle: #00ff7363;
     --danger: #ff0040;
@@ -36,8 +36,8 @@ html {
     --secondary: #f18a62;
     --secondary-subtle: #f18a6263;
     --border-subtle: #3d3d3d;
-    --primary-subtle: #eb5f2863;
-    --selection: #eb5f281a;
+    --primary-subtle: #cc990063;
+    --selection: #cc99001a;
     --border: #5a5a5a41;
     --grid: rgba(42, 29, 51, 0.49);
     --text: #fffcf2;

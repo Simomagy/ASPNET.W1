@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Ospedale.Models;
 
 namespace Ospedale.Controllers
 {
@@ -7,7 +8,7 @@ namespace Ospedale.Controllers
         // GET
         public IActionResult Home()
         {
-            return View();
+            return View(DaoMedici.GetInstance().GetTop10());
         }
     }
 }
